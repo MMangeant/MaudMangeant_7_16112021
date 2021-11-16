@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <title>Les Petits Plats</title>
+    </head>
+
+    <body>
+        <header role="banner">
+            <div class="header-logo" aria-label="logo"> 
+                <img alt="logo" src="images/logo.png" width="auto" height="auto" />
+            </div>
+            <nav id="menu" role=”navigation” aria-label="photographer categories">
+                <ul></ul>
+            </nav>
+        </header>
+    
+        <main>
+
+            <div role="search-bar">
+                <form method="post" action="">
+                    <div class="form-search">
+                        <input type="text" name="" id="" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"/>
+                        <span class="loupe"><img src="images/loupe.svg" alt=""></button>
+                    </div>
+                </form>
+            </div>
+
+            <section class="triEncarts">
+                <select name="" id="selectIngredient">
+                  <option value="ingredients">Ingrédients</option>
+                </select>
+                <select name="" id="selectAppareil">
+                    <option value="appareil">Appareil</option>
+                  </select>
+                  <select name="" id="selectUstensile">
+                    <option value="ustensiles">Ustensiles</option>
+                  </select>
+              </section>
+
+              <section class="recettes">
+                <div class="recetteEncart">
+                    <div class="recetteEncart__img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="recetteEncart__txt">
+                        <div class="recetteH">
+                            <div class="recetteH__titre">Limonade de Coco</div>
+                            <div class="recetteH__temps">10 min</div>
+                        </div>
+                        <div class="recetteB">
+                            <div class="recetteB__ingredients">
+                                <div><span>Lait de coco : </span>400ml</div>
+                                <div><span>Jus de citron : </span>2</div>
+                                <div><span>Crème de coco : </span>4 cuillères</div>
+                                <div><span>Sucre : </span>20g</div>
+                                <div><span>Glaçons : </span>2</div>
+                            </div>
+                            <div class="recetteB__description">
+                                Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </section>
+
+        </main>
+      
+        <footer></footer>
+    
+        <script src="recipes.js"></script>
+        
+    </body>
+</html>

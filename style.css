@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+body {
+  margin: 50px 100px;
+  font-family: "Lato", sans-serif;
+}
+
+.header-logo {
+  display: flex;
+  justify-content: center;
+}
+.header-logo img {
+  max-width: 280px;
+}
+
+.triEncarts {
+  display: flex;
+}
+.triEncarts select {
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  color: #ffffff;
+}
+.triEncarts select#selectIngredient {
+  background-color: #3282F7;
+}
+.triEncarts select#selectAppareil {
+  background-color: #68D9A4;
+}
+.triEncarts select#selectUstensile {
+  background-color: #ED6454;
+}
+
+.form-search {
+  margin-bottom: 20px;
+  position: relative;
+}
+.form-search input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #E7E7E7;
+  border: none;
+}
+.form-search .loupe {
+  position: absolute;
+  right: -20px;
+  background: transparent;
+  border: none;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.form-search .loupe img {
+  width: 25px;
+}
+
+.recettes {
+  margin-top: 20px;
+}
+.recettes .recetteEncart {
+  border-radius: 5px;
+  width: 380px;
+  height: 364px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+.recettes .recetteEncart__img {
+  background-color: #C7BEBE;
+  border-radius: 5px 5px 0 0;
+}
+.recettes .recetteEncart__txt {
+  background-color: #E7E7E7;
+  border-radius: 0 0 5px 5px;
+  padding: 20px;
+}
+.recettes .recetteEncart__txt .recetteH {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+.recettes .recetteEncart__txt .recetteH__temps {
+  position: relative;
+}
+.recettes .recetteEncart__txt .recetteH__temps::before {
+  content: "";
+  background-image: url("images/clock.svg");
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: -27px;
+}
+.recettes .recetteEncart__txt .recetteB {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 12px;
+  margin-top: 20px;
+}
+.recettes .recetteEncart__txt .recetteB__ingredients span {
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */

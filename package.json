@@ -1,0 +1,11 @@
+{
+  "name": "p7__lespetitsplats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch ./sass/style.scss:./style.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

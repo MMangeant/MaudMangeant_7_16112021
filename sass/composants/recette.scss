@@ -1,0 +1,51 @@
+
+.recettes{
+    margin-top: 20px;
+    .recetteEncart{
+        border-radius: 5px;
+        width: 380px;
+        height: 364px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        &__img{
+            background-color: $grisFonce;
+            border-radius: 5px 5px 0 0;
+        }
+        &__txt{
+            background-color: $grisClair;
+            border-radius: 0 0 5px 5px;
+            padding: 20px;
+            .recetteH{
+                display: flex;
+                justify-content: space-between;
+                font-size: 18px;
+                &__temps{
+                    position:relative;
+                    &::before{
+                        content: '';
+                        background-image: url("images/clock.svg");
+                        position: absolute;
+                        height: 20px;
+                        width: 20px;
+                        left: -27px;
+                    }
+                }
+            }
+            .recetteB{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                font-size: 12px;
+                margin-top: 20px;
+                &__ingredients{
+                    span{
+                        font-weight: bold;
+                    }
+                }
+                &__description{
+                    
+                }
+            }
+        }
+    }
+
+}
