@@ -19,7 +19,7 @@ recipes.forEach(recette =>{
     descriptionRecette = recette.description;
   
     sectionRecettes.innerHTML += `
-    <div class="recetteEncart">
+    <div class="recetteEncart" data-name="${nameRecette}">
       <div class="recetteEncart__img">
         <img src="" alt="">
       </div>
@@ -40,5 +40,22 @@ recipes.forEach(recette =>{
       </div>
     </div>  
     `;
-
+      
 })
+
+let allRecettes = [...document.querySelectorAll('.recetteEncart')];
+console.log(allRecettes);
+    
+
+allRecettes.map(recipe =>{
+  let dataName = recipe.dataset.name;
+  if(dataName.includes("Tarte")){
+    recipe.style.display="block";
+  }
+  else{
+    recipe.style.display="none";
+  }
+});
+
+    
+    
