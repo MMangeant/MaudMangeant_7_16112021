@@ -42,10 +42,3 @@ recipes.forEach(recette =>{
     `;
 
 })
-
-
-// ${listIngredientsRecette.map(elt => `<div><span>${ingredientsRecette}</span> : ${elt.quantity}${elt.unit}</div>`).join('')}
-
-// message = `${horse.name} is ${
-//   horse.age > 5 ? "an old-horse" : "a young-horse"
-// }`;
