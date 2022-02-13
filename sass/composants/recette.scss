@@ -1,6 +1,9 @@
 
 .recettes{
     margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
     .recetteEncart{
         border-radius: 5px;
         width: 380px;
@@ -21,13 +24,14 @@
                 font-size: 18px;
                 &__temps{
                     position:relative;
-                    &::before{
-                        content: '';
-                        background-image: url("images/clock.svg");
-                        position: absolute;
-                        height: 20px;
-                        width: 20px;
-                        left: -27px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: end;
+                    min-width: 100px;
+                    img{
+                      height: 20px;
+                      width: 20px;
+                      margin-right: 8px;
                     }
                 }
             }
@@ -36,13 +40,16 @@
                 grid-template-columns: 1fr 1fr;
                 font-size: 12px;
                 margin-top: 20px;
+                grid-gap: 10px;
                 &__ingredients{
                     span{
                         font-weight: bold;
                     }
                 }
                 &__description{
-                    
+                  height: 88px;
+                  overflow: hidden;
+                  text-overflow: ellipsis; 
                 }
             }
         }

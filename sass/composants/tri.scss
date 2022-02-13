@@ -1,20 +1,54 @@
-.triEncarts{
+.sectionTris{
     display: flex;
-    select{
-        margin-right: 20px;
-        border: none;
-        border-radius: 5px;
-        padding: 15px;
+    .encarTri{
+      position: relative;
+      margin-right: 10px;
+      height: 100%;
+      .chevron{
+        position: absolute;
+        right: 0;
+        width: 18px;
+        top: 50%;
+        padding-right: 5px;
+        transform: translateY(-50%);
+      }
+      span{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
         color: $blanc;
-        
-        &#selectIngredient{
-            background-color: $bleu;
-        }
-        &#selectAppareil{
-            background-color: $vert;
-        }
-        &#selectUstensile{
-            background-color: $orange;
-        }
+        margin-left: 10px;
+        pointer-events: none;
+      }
+      input{
+          padding-right: 20px;
+          border: none;
+          border-radius: 5px;
+          padding: 15px;
+          color: $blanc;
+          -webkit-appearance: none;
+          outline: none !important;
+          &::placeholder{
+            color: rgba($blanc, 0.8);
+            letter-spacing: 1px;
+            opacity: 0;
+          }
+          &:focus{
+            width: 30vw;
+            &::placeholder{
+              opacity: 1;
+            }
+          }
+          
+          &#inputIngredient{
+              background-color: $bleu;
+          }
+          &#inputAppareil{
+              background-color: $vert;
+          }
+          &#inputUstensile{
+              background-color: $orange;
+          }
+      }
     }
 }

@@ -12,23 +12,57 @@ body {
   max-width: 280px;
 }
 
-.triEncarts {
+.sectionTris {
   display: flex;
 }
-.triEncarts select {
-  margin-right: 20px;
+.sectionTris .encarTri {
+  position: relative;
+  margin-right: 10px;
+  height: 100%;
+}
+.sectionTris .encarTri .chevron {
+  position: absolute;
+  right: 0;
+  width: 18px;
+  top: 50%;
+  padding-right: 5px;
+  transform: translateY(-50%);
+}
+.sectionTris .encarTri span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  margin-left: 10px;
+  pointer-events: none;
+}
+.sectionTris .encarTri input {
+  padding-right: 20px;
   border: none;
   border-radius: 5px;
   padding: 15px;
   color: #ffffff;
+  -webkit-appearance: none;
+  outline: none !important;
 }
-.triEncarts select#selectIngredient {
+.sectionTris .encarTri input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 1px;
+  opacity: 0;
+}
+.sectionTris .encarTri input:focus {
+  width: 30vw;
+}
+.sectionTris .encarTri input:focus::placeholder {
+  opacity: 1;
+}
+.sectionTris .encarTri input#inputIngredient {
   background-color: #3282F7;
 }
-.triEncarts select#selectAppareil {
+.sectionTris .encarTri input#inputAppareil {
   background-color: #68D9A4;
 }
-.triEncarts select#selectUstensile {
+.sectionTris .encarTri input#inputUstensile {
   background-color: #ED6454;
 }
 
@@ -57,6 +91,9 @@ body {
 
 .recettes {
   margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 .recettes .recetteEncart {
   border-radius: 5px;
@@ -81,23 +118,30 @@ body {
 }
 .recettes .recetteEncart__txt .recetteH__temps {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  min-width: 100px;
 }
-.recettes .recetteEncart__txt .recetteH__temps::before {
-  content: "";
-  background-image: url("images/clock.svg");
-  position: absolute;
+.recettes .recetteEncart__txt .recetteH__temps img {
   height: 20px;
   width: 20px;
-  left: -27px;
+  margin-right: 8px;
 }
 .recettes .recetteEncart__txt .recetteB {
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-size: 12px;
   margin-top: 20px;
+  grid-gap: 10px;
 }
 .recettes .recetteEncart__txt .recetteB__ingredients span {
   font-weight: bold;
+}
+.recettes .recetteEncart__txt .recetteB__description {
+  height: 88px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*# sourceMappingURL=style.css.map */
