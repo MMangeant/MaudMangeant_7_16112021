@@ -19,7 +19,7 @@ recipes.forEach(recette =>{
     descriptionRecette = recette.description;
   
     sectionRecettes.innerHTML += `
-    <div class="recetteEncart" data-name="${nameRecette}">
+    <div class="recetteEncart" data-name="${nameRecette}" data-ingredients="${ingredientsRecette.map(elt => elt.ingredient).join(' ')}" data-description="${descriptionRecette}">
       <div class="recetteEncart__img">
         <img src="" alt="">
       </div>
@@ -46,15 +46,23 @@ recipes.forEach(recette =>{
 let allRecettes = [...document.querySelectorAll('.recetteEncart')];
 console.log(allRecettes);
     
-
 allRecettes.map(recipe =>{
   let dataName = recipe.dataset.name;
-  if(dataName.includes("Tarte")){
+  let dataIngredients = recipe.dataset.ingredients;
+  let dataDescription = recipe.dataset.description;
+  // if(dataName.includes("Tarte")){
+  //   recipe.style.display="block";
+  // }
+  // else{
+  //   recipe.style.display="none";
+  // }
+  if(dataIngredients.includes("Citron") || dataName.includes("Tarte")){
     recipe.style.display="block";
   }
   else{
     recipe.style.display="none";
   }
+
 });
 
     
