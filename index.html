@@ -24,42 +24,40 @@
             <div role="search-bar" class="sectionSearch">
                 <form method="post" action="">
                     <div class="form-search">
-                        <input type="text" name="" id="searchBar" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"/>
-                        <span class="loupe"><img src="images/loupe.svg" alt=""></button>
+                        <input type="text" name="" id="searchBar" onkeypress="getValue()" oplaceholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"/>
+                        <span class="loupe" onclick="getValue()"><img src="images/loupe.svg" alt=""></button>
                     </div>
                 </form>
             </div>
 
             <section class="sectionTris">
-              
+
                 <div class="encarTri">
-                  <span>Ingrédients</span>
-                  <input id="inputIngredient" type="text" name="ingredients" placeholder="Rechercher un ingrédient">
-                  <img class="chevron" alt="chevron" src="images/chevron_down.svg"/>
+                  <div class="selectTri">
+                    <span class="test">Ingrédients</span>
+                    <input id="inputIngredient" type="text" name="ingredients" placeholder="Rechercher un ingrédient">
+                    <img class="chevron" alt="chevron" src="images/chevron_down.svg"/> 
+                  </div>
+                  <ul class="choixTri" id="choixIngredients"></ul>
                 </div>
 
                 <div class="encarTri">
-                  <span>Appareils</span>
-                  <input id="inputAppareil" type="text" name="appareils" placeholder="Rechercher un appareil">
-                  <img class="chevron" alt="chevron" src="images/chevron_down.svg"/>
+                  <div class="selectTri">
+                    <span>Appareils</span>
+                    <input id="inputAppareil" type="text" name="appareils" placeholder="Rechercher un appareil">
+                    <img class="chevron" alt="chevron" src="images/chevron_down.svg"/>
+                  </div>
+                  <div class="choixTri" id="choixAppareils"></div>
                 </div>
                 
                 <div class="encarTri">
-                  <span>Ustensiles</span>
-                  <input id="inputUstensile" type="text" name="ustensiles" placeholder="Rechercher un ustensile">
-                  <img class="chevron" alt="chevron" src="images/chevron_down.svg"/>
-                </div>
-
-                <!-- <div class="encarTri">
-                  <div class="triClose">
+                  <div class="selectTri">
                     <span>Ustensiles</span>
-                    <img class="chevron" alt="chevron" src="images/chevron_up.svg"/>
-                  </div>
-                  <div class="triOpen">
-                    <input id="inputUstensile" type="text" name="appareils" placeholder="Rechercher un ustensile">
+                    <input id="inputUstensile" type="text" name="ustensiles" placeholder="Rechercher un ustensile">
                     <img class="chevron" alt="chevron" src="images/chevron_down.svg"/>
                   </div>
-                </div> -->
+                  <div class="choixTri" id="choixUstensiles"></div>
+                </div>
 
             </section>
 

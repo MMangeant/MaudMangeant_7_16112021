@@ -1,9 +1,11 @@
 .sectionTris{
-    display: flex;
+  display: flex;
     .encarTri{
+      
+    }
+    .selectTri{
       position: relative;
       margin-right: 10px;
-      height: 100%;
       .chevron{
         position: absolute;
         right: 0;
@@ -19,6 +21,7 @@
         color: $blanc;
         margin-left: 10px;
         pointer-events: none;
+
       }
       input{
           padding-right: 20px;

@@ -15,12 +15,11 @@ body {
 .sectionTris {
   display: flex;
 }
-.sectionTris .encarTri {
+.sectionTris .selectTri {
   position: relative;
   margin-right: 10px;
-  height: 100%;
 }
-.sectionTris .encarTri .chevron {
+.sectionTris .selectTri .chevron {
   position: absolute;
   right: 0;
   width: 18px;
@@ -28,7 +27,7 @@ body {
   padding-right: 5px;
   transform: translateY(-50%);
 }
-.sectionTris .encarTri span {
+.sectionTris .selectTri span {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -36,7 +35,7 @@ body {
   margin-left: 10px;
   pointer-events: none;
 }
-.sectionTris .encarTri input {
+.sectionTris .selectTri input {
   padding-right: 20px;
   border: none;
   border-radius: 5px;
@@ -45,24 +44,24 @@ body {
   -webkit-appearance: none;
   outline: none !important;
 }
-.sectionTris .encarTri input::placeholder {
+.sectionTris .selectTri input::placeholder {
   color: rgba(255, 255, 255, 0.8);
   letter-spacing: 1px;
   opacity: 0;
 }
-.sectionTris .encarTri input:focus {
+.sectionTris .selectTri input:focus {
   width: 30vw;
 }
-.sectionTris .encarTri input:focus::placeholder {
+.sectionTris .selectTri input:focus::placeholder {
   opacity: 1;
 }
-.sectionTris .encarTri input#inputIngredient {
+.sectionTris .selectTri input#inputIngredient {
   background-color: #3282F7;
 }
-.sectionTris .encarTri input#inputAppareil {
+.sectionTris .selectTri input#inputAppareil {
   background-color: #68D9A4;
 }
-.sectionTris .encarTri input#inputUstensile {
+.sectionTris .selectTri input#inputUstensile {
   background-color: #ED6454;
 }
 

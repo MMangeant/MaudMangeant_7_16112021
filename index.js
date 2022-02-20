@@ -1,4 +1,3 @@
-
 // let encartsTri = document.querySelectorAll('.encarTri')
 // encartsTri.forEach(tri =>{
 //   tri.addEventListener("click", function triClicked(){
@@ -7,9 +6,13 @@
 // })
 
 
-/* APPEL TABLEAU JSON */
+///**  APPEL TABLEAU JSON  **///
 
 const sectionRecettes = document.querySelector('.recettes');
+
+const choixIng = document.querySelector('#choixIngredients');
+const choixApp = document.querySelector('#choixAppareils');
+const choixUst = document.querySelector('#choixUstensiles');
 
 recipes.forEach(recette =>{
     
@@ -17,6 +20,8 @@ recipes.forEach(recette =>{
     timeRecette = recette.time;
     ingredientsRecette = recette.ingredients;
     descriptionRecette = recette.description;
+
+    // appel encarts de recettes
   
     sectionRecettes.innerHTML += `
     <div class="recetteEncart" data-name="${nameRecette}" data-ingredients="${ingredientsRecette.map(elt => elt.ingredient).join(' ')}" data-description="${descriptionRecette}">
@@ -40,30 +45,85 @@ recipes.forEach(recette =>{
       </div>
     </div>  
     `;
+
+    // appel tri ingredients, appareils, ustensiles 
+
+    choixIng.innerHTML += `
+    <li>${ingredientsRecette.map(elt => elt.ingredient).join(' ')}</li>
+    `;
       
+    let arrayIng = [];
+    arrayIng.push(ingredientsRecette.map(elt => elt.ingredient).reduce((test, elt) => test + elt))
+
+    // recipes.forEach((recipe) => {
+    //   if (recipe.ingredients.length) {
+    //     const ingredientsMap = recipe.ingredients.map((ingr) => ingr.ingredient.toLowerCase());
+    //     list.push(...ingredientsMap);
+    //   }
+    // });
+
+    console.log(arrayIng);
 })
 
+
+
+//* ALGO RECHERCHE *//
+
 let allRecettes = [...document.querySelectorAll('.recetteEncart')];
-console.log(allRecettes);
-    
-allRecettes.map(recipe =>{
-  let dataName = recipe.dataset.name;
-  let dataIngredients = recipe.dataset.ingredients;
-  let dataDescription = recipe.dataset.description;
-  // if(dataName.includes("Tarte")){
-  //   recipe.style.display="block";
-  // }
-  // else{
-  //   recipe.style.display="none";
-  // }
-  if(dataIngredients.includes("Citron") || dataName.includes("Tarte")){
-    recipe.style.display="block";
-  }
-  else{
-    recipe.style.display="none";
-  }
 
-});
+let inputValue;
 
-    
-    
+function getValue(e) {
+  inputValue = document.getElementById('searchBar').value;
+  // alert(inputValue);
+
+  allRecettes.map(recipe =>{
+
+    let dataName = recipe.dataset.name.toLowerCase();
+    let dataIngredients = recipe.dataset.ingredients.toLowerCase();
+    let dataDescription = recipe.dataset.description.toLowerCase();
+
+    if(inputValue.length >= 3){
+        if(dataIngredients.includes(inputValue) || dataName.includes(inputValue) || dataDescription.includes(inputValue)){
+          recipe.style.display="block";
+        }
+        else{
+          recipe.style.display="none";
+        }
+    } 
+    else{
+      console.log(inputValue + "is too short");
+      recipe.style.display="block";
+    }
+     
+  });
+  
+}
+
+
+
+// let arr = [1,2,3,4,5,6,7,8,9];
+
+// // MAP //
+
+// let tab1 = arr.map(number => {
+//    let result = number * 2 ;
+//    return result;
+//  });
+//  let tab2 = tab1.filter(x => x > 5);
+//  console.log(tab2);
+ 
+//  //     =======     //
+
+// let tab1 = arr.map(number => number * 2 ).filter(x => x > 5);
+// console.log(tab1);
+
+
+// // FOREACH //
+
+// let tab4= [];
+// let tab3 = arr.forEach(number => {
+//   let result = number * 2 ;
+//   tab4.push(result)
+// });
+// console.log(tab4);
