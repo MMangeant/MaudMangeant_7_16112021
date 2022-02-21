@@ -15,6 +15,10 @@ body {
 .sectionTris {
   display: flex;
 }
+.sectionTris .choixTri {
+  list-style: none;
+  padding: 0;
+}
 .sectionTris .selectTri {
   position: relative;
   margin-right: 10px;

@@ -10,16 +10,13 @@
 
 const sectionRecettes = document.querySelector('.recettes');
 
-const choixIng = document.querySelector('#choixIngredients');
-const choixApp = document.querySelector('#choixAppareils');
-const choixUst = document.querySelector('#choixUstensiles');
-
 recipes.forEach(recette =>{
     
     nameRecette = recette.name;
     timeRecette = recette.time;
     ingredientsRecette = recette.ingredients;
     descriptionRecette = recette.description;
+
 
     // appel encarts de recettes
   
@@ -48,22 +45,112 @@ recipes.forEach(recette =>{
 
     // appel tri ingredients, appareils, ustensiles 
 
-    choixIng.innerHTML += `
-    <li>${ingredientsRecette.map(elt => elt.ingredient).join(' ')}</li>
-    `;
+    // choixIng.innerHTML += `
+    // <li>${ingredientsRecette.map(elt => elt.ingredient).join(' ')}</li>
+    // `;
       
-    let arrayIng = [];
-    arrayIng.push(ingredientsRecette.map(elt => elt.ingredient).reduce((test, elt) => test + elt))
+    // let arrayIng = [];
+    // arrayIng.push(ingredientsRecette.map(elt => elt.ingredient).reduce((test, elt) => test + elt))
 
-    // recipes.forEach((recipe) => {
-    //   if (recipe.ingredients.length) {
-    //     const ingredientsMap = recipe.ingredients.map((ingr) => ingr.ingredient.toLowerCase());
-    //     list.push(...ingredientsMap);
-    //   }
-    // });
 
-    console.log(arrayIng);
+
+    appareilRecette = [recette.appliance];
+
+    // let listAppareils = [];
+    // listAppareils.push(appareilRecette);
+
+    // choixApp.innerHTML += `
+    // <li>${appareilRecette}</li>
+    // `;
+  
+
+    // console.log(appareilRecette);
+
+
+    
 })
+
+// let totalAppareils = [];
+
+// recipes.forEach(recipe =>{
+
+//   appareilRecette = [recipe.appliance];
+//   let appMap = appareilRecette.map(elt => elt);
+//   totalAppareils.push(appMap)
+//   console.log(appMap);
+// })
+
+// console.log(totalAppareils);
+
+
+
+/* */
+
+const choixIng = document.querySelector('#choixIngredients');
+const choixApp = document.querySelector('#choixAppareils');
+const choixUst = document.querySelector('#choixUstensiles');
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+  let ingredientsArray = [];
+  createIngredientsList(ingredientsArray);
+  console.log(ingredientsArray);
+  ingredientsArray.forEach(elt =>{
+    choixIng.innerHTML += ` <li>${elt}</li> `;
+  })
+  
+  let appareilsArray = [];
+  createAppareilsList(appareilsArray);
+  console.log(appareilsArray);
+  appareilsArray.forEach(elt =>{
+    choixApp.innerHTML += ` <li>${elt}</li> `;
+  })
+
+  let ustensilesArray = [];
+  createUstensilesList(ustensilesArray);
+  console.log(ustensilesArray);
+  ustensilesArray.forEach(elt =>{
+    choixUst.innerHTML += ` <li>${elt}</li> `;
+  })
+
+  
+
+});
+
+function createAppareilsList(applianceToAdd) {
+  for(var i = 0; i < recipes.length; i++) {
+      let appliance = recipes[i].appliance;
+      if(!applianceToAdd.includes(appliance)) {
+          applianceToAdd.push(appliance);
+      }
+  }
+}
+
+function createUstensilesList(ustensilToAdd) {
+  for(var i = 0; i < recipes.length; i++) {
+      let ustensils = recipes[i].ustensils;
+      for(var j = 0; j < ustensils.length; j++) {
+        let ustensil = ustensils[j];
+        if(!ustensilToAdd.includes(ustensil)) {
+          ustensilToAdd.push(ustensil);
+        }
+      }   
+  }
+}
+
+function createIngredientsList(ingredientToAdd) {
+  for(var i = 0; i < recipes.length; i++) {
+      let ingredients = recipes[i].ingredients;
+      for(var j = 0; j < ingredients.length; j++) {
+        let ingredient = ingredients[j];
+        if(!ingredientToAdd.includes(ingredient)) {
+          ingredientToAdd.push(ingredient);
+        }
+      }   
+  }
+}
+
 
 
 
