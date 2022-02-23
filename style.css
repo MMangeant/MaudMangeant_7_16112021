@@ -15,9 +15,23 @@ body {
 .sectionTris {
   display: flex;
 }
+.sectionTris .encarTri:nth-child(1) .choixTri {
+  background-color: #3282F7;
+}
+.sectionTris .encarTri:nth-child(2) .choixTri {
+  background-color: #68D9A4;
+}
+.sectionTris .encarTri:nth-child(3) .choixTri {
+  background-color: #ED6454;
+}
 .sectionTris .choixTri {
   list-style: none;
   padding: 0;
+  overflow: scroll;
+  max-height: 200px;
+  column-count: 3;
+  color: #ffffff;
+  padding: 10px;
 }
 .sectionTris .selectTri {
   position: relative;
@@ -51,13 +65,9 @@ body {
 .sectionTris .selectTri input::placeholder {
   color: rgba(255, 255, 255, 0.8);
   letter-spacing: 1px;
-  opacity: 0;
 }
 .sectionTris .selectTri input:focus {
   width: 30vw;
-}
-.sectionTris .selectTri input:focus::placeholder {
-  opacity: 1;
 }
 .sectionTris .selectTri input#inputIngredient {
   background-color: #3282F7;

@@ -1,11 +1,30 @@
 .sectionTris{
   display: flex;
     .encarTri{
-      
+      &:nth-child(1){
+        .choixTri{
+          background-color: $bleu;
+        }
+      }
+      &:nth-child(2){
+        .choixTri{
+          background-color: $vert;
+        }
+      }
+      &:nth-child(3){
+        .choixTri{
+          background-color: $orange;
+        }
+      }
     }
     .choixTri{
       list-style: none;
       padding: 0;
+      overflow: scroll;
+      max-height: 200px;
+      column-count: 3;
+      color: $blanc;
+      padding: 10px;
     }
     .selectTri{
       position: relative;
@@ -38,13 +57,9 @@
           &::placeholder{
             color: rgba($blanc, 0.8);
             letter-spacing: 1px;
-            opacity: 0;
           }
           &:focus{
             width: 30vw;
-            &::placeholder{
-              opacity: 1;
-            }
           }
           
           &#inputIngredient{
