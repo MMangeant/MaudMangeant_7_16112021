@@ -1,10 +1,3 @@
-// let encartsTri = document.querySelectorAll('.encarTri')
-// encartsTri.forEach(tri =>{
-//   tri.addEventListener("click", function triClicked(){
-//     tri.classList.add("clicked");
-//   });
-// })
-
 
 ///**  APPEL TABLEAU JSON  **///
 
@@ -47,106 +40,10 @@ recipes.forEach(recette =>{
 
 
 
-// Appel tri ingredients, appareils, ustensiles 
-
-
-/* tableau appareils */
-
-let tabAppareils = [...new Set(recipes.map(recipe => recipe.appliance))];
-
-
-/* tableau ustensiles */
-
-let ustensils = [];
-
-recipes.map(recipe => {
-  recipe.ustensils.map(truc =>{
-    ustensils.push(truc)
-  })
-})
-
-let tabUstensils = [...new Set(ustensils)]
-
-
-/* tableau ingrédients */
-
-let ingredients = [];
-
-recipes.map(recipe => {
-  recipe.ingredients.map(truc =>{
-    ingredients.push(truc.ingredient)
-  })
-})
-
-let tabIngredients = [...new Set(ingredients)]
-
-
-/* */
-
-const inputIng = document.querySelector('#inputIngredient');
-
-inputIng.addEventListener("focus", function(){
-  inputIng.placeholder = "Rechercher un ingrédient";
-});
-inputIng.addEventListener("blur", function(){
-  inputIng.placeholder = "Ingrédient";
-});
 
 
 
 
-
-const choixIng = document.querySelector('#choixIngredients');
-const choixApp = document.querySelector('#choixAppareils');
-const choixUst = document.querySelector('#choixUstensiles');
-
-
-tabAppareils.forEach(elt =>{
-  choixApp.innerHTML += ` <li>${elt.toLowerCase()}</li> `;
-})
-
-tabUstensils.forEach(elt =>{
-  choixUst.innerHTML += ` <li>${elt.toLowerCase()}</li> `;
-})
-
-tabIngredients.forEach(elt =>{
-  choixIng.innerHTML += ` <li>${elt.toLowerCase()}</li> `;
-})
-
-
-
-//* ALGO RECHERCHE *//
-
-let allRecettes = [...document.querySelectorAll('.recetteEncart')];
-
-let inputValue;
-
-function getValue(e) {
-  inputValue = document.getElementById('searchBar').value;
-  // alert(inputValue);
-
-  allRecettes.map(recipe =>{
-
-    let dataName = recipe.dataset.name.toLowerCase();
-    let dataIngredients = recipe.dataset.ingredients.toLowerCase();
-    let dataDescription = recipe.dataset.description.toLowerCase();
-
-    if(inputValue.length >= 3){
-        if(dataIngredients.includes(inputValue) || dataName.includes(inputValue) || dataDescription.includes(inputValue)){
-          recipe.style.display="block";
-        }
-        else{
-          recipe.style.display="none";
-        }
-    } 
-    else{
-      // console.log(inputValue + "is too short");
-      recipe.style.display="block";
-    }
-     
-  });
-  
-}
 
 
 

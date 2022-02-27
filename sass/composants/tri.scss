@@ -2,17 +2,17 @@
   display: flex;
     .encarTri{
       &:nth-child(1){
-        .choixTri{
+        .choixTri, .selectTri{
           background-color: $bleu;
         }
       }
       &:nth-child(2){
-        .choixTri{
+        .choixTri, .selectTri{
           background-color: $vert;
         }
       }
       &:nth-child(3){
-        .choixTri{
+        .choixTri, .selectTri{
           background-color: $orange;
         }
       }
@@ -20,22 +20,24 @@
     .choixTri{
       list-style: none;
       padding: 0;
-      overflow: scroll;
       max-height: 200px;
       column-count: 3;
       color: $blanc;
       padding: 10px;
+      display: none;
     }
     .selectTri{
       position: relative;
       margin-right: 10px;
+      width:180px;
+      border-radius: 5px;
       .chevron{
         position: absolute;
         right: 0;
         width: 18px;
-        top: 50%;
-        padding-right: 5px;
-        transform: translateY(-50%);
+        top: 15px;
+        padding-right: 10px;
+        // transform: translateY(-50%);
       }
       span{
         position: absolute;
@@ -49,11 +51,12 @@
       input{
           padding-right: 20px;
           border: none;
-          border-radius: 5px;
           padding: 15px;
           color: $blanc;
           -webkit-appearance: none;
           outline: none !important;
+          background: transparent;
+          width: 100%;
           &::placeholder{
             color: rgba($blanc, 0.8);
             letter-spacing: 1px;
@@ -62,15 +65,12 @@
             width: 30vw;
           }
           
-          &#inputIngredient{
-              background-color: $bleu;
-          }
-          &#inputAppareil{
-              background-color: $vert;
-          }
-          &#inputUstensile{
-              background-color: $orange;
-          }
+      }
+      &.focus{
+        width: 40vw;
+        .chevron{
+          transform: rotate(180deg);
+        }
       }
     }
 }

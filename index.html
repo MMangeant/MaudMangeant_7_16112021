@@ -24,7 +24,7 @@
             <div role="search-bar" class="sectionSearch">
                 <form method="post" action="">
                     <div class="form-search">
-                        <input type="text" name="" id="searchBar" onkeypress="getValue()" oplaceholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"/>
+                        <input type="text" name="" id="searchBar" onkeypress="getValue()" placeholder="Rechercher une recette"/>
                         <span class="loupe" onclick="getValue()"><img src="images/loupe.svg" alt=""></button>
                     </div>
                 </form>
@@ -33,29 +33,27 @@
             <section class="sectionTris">
 
                 <div class="encarTri">
-                  <div class="selectTri">
+                  <div class="selectTri" id="selectIngredient">
                     <input id="inputIngredient" type="text" name="ingredients" placeholder="Ingrédients">
                     <img class="chevron" alt="chevron" src="images/chevron_down.svg"/> 
+                    <ul class="choixTri" id="choixIngredients"></ul>
                   </div>
-                  <ul class="choixTri" id="choixIngredients"></ul>
                 </div>
 
                 <div class="encarTri">
-                  <div class="selectTri">
-                    <span>Appareils</span>
-                    <input id="inputAppareil" type="text" name="appareils" placeholder="Rechercher un appareil">
+                  <div class="selectTri" id="selectAppareil">
+                    <input id="inputAppareil" type="text" name="appareils" placeholder="Appareils">
                     <img class="chevron" alt="chevron" src="images/chevron_down.svg"/>
+                    <ul class="choixTri" id="choixAppareils"></ul>
                   </div>
-                  <ul class="choixTri" id="choixAppareils"></ul>
                 </div>
                 
                 <div class="encarTri">
-                  <div class="selectTri">
-                    <span>Ustensiles</span>
-                    <input id="inputUstensile" type="text" name="ustensiles" placeholder="Rechercher un ustensile">
+                  <div class="selectTri" id="selectUstensile">
+                    <input id="inputUstensile" type="text" name="ustensiles" placeholder="Ustensiles">
                     <img class="chevron" alt="chevron" src="images/chevron_down.svg"/>
+                    <ul class="choixTri" id="choixUstensiles"></ul>
                   </div>
-                  <ul class="choixTri" id="choixUstensiles"></ul>
                 </div>
 
             </section>
@@ -69,6 +67,8 @@
     
         <script src="recipes.js"></script>
         <script src="index.js"></script>
+        <script src="searchBar.js"></script>
+        <script src="tris.js"></script>
         
     </body>
 </html>

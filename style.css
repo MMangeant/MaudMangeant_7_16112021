@@ -15,35 +15,36 @@ body {
 .sectionTris {
   display: flex;
 }
-.sectionTris .encarTri:nth-child(1) .choixTri {
+.sectionTris .encarTri:nth-child(1) .choixTri, .sectionTris .encarTri:nth-child(1) .selectTri {
   background-color: #3282F7;
 }
-.sectionTris .encarTri:nth-child(2) .choixTri {
+.sectionTris .encarTri:nth-child(2) .choixTri, .sectionTris .encarTri:nth-child(2) .selectTri {
   background-color: #68D9A4;
 }
-.sectionTris .encarTri:nth-child(3) .choixTri {
+.sectionTris .encarTri:nth-child(3) .choixTri, .sectionTris .encarTri:nth-child(3) .selectTri {
   background-color: #ED6454;
 }
 .sectionTris .choixTri {
   list-style: none;
   padding: 0;
-  overflow: scroll;
   max-height: 200px;
   column-count: 3;
   color: #ffffff;
   padding: 10px;
+  display: none;
 }
 .sectionTris .selectTri {
   position: relative;
   margin-right: 10px;
+  width: 180px;
+  border-radius: 5px;
 }
 .sectionTris .selectTri .chevron {
   position: absolute;
   right: 0;
   width: 18px;
-  top: 50%;
-  padding-right: 5px;
-  transform: translateY(-50%);
+  top: 15px;
+  padding-right: 10px;
 }
 .sectionTris .selectTri span {
   position: absolute;
@@ -56,11 +57,12 @@ body {
 .sectionTris .selectTri input {
   padding-right: 20px;
   border: none;
-  border-radius: 5px;
   padding: 15px;
   color: #ffffff;
   -webkit-appearance: none;
   outline: none !important;
+  background: transparent;
+  width: 100%;
 }
 .sectionTris .selectTri input::placeholder {
   color: rgba(255, 255, 255, 0.8);
@@ -69,14 +71,11 @@ body {
 .sectionTris .selectTri input:focus {
   width: 30vw;
 }
-.sectionTris .selectTri input#inputIngredient {
-  background-color: #3282F7;
+.sectionTris .selectTri.focus {
+  width: 40vw;
 }
-.sectionTris .selectTri input#inputAppareil {
-  background-color: #68D9A4;
-}
-.sectionTris .selectTri input#inputUstensile {
-  background-color: #ED6454;
+.sectionTris .selectTri.focus .chevron {
+  transform: rotate(180deg);
 }
 
 .form-search {
