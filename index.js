@@ -1,20 +1,20 @@
 
 ///**  APPEL TABLEAU JSON  **///
 
-const sectionRecettes = document.querySelector('.recettes');
-
 recipes.forEach(recette =>{
     
     nameRecette = recette.name;
     timeRecette = recette.time;
     ingredientsRecette = recette.ingredients;
     descriptionRecette = recette.description;
+    appareilRecette = recette.appliance;
+    ustensilRecette = recette.ustensils;
 
 
     // appel encarts de recettes
   
     sectionRecettes.innerHTML += `
-    <div class="recetteEncart" data-name="${nameRecette}" data-ingredients="${ingredientsRecette.map(elt => elt.ingredient).join(' ')}" data-description="${descriptionRecette}">
+    <div class="recetteEncart" data-name="${nameRecette}" data-ingredients="${ingredientsRecette.map(elt => elt.ingredient).join(' ')}" data-description="${descriptionRecette}" data-appareil="${appareilRecette}" data-ustensiles="${ustensilRecette.map(elt => elt).join(' ')}">
       <div class="recetteEncart__img">
         <img src="" alt="">
       </div>

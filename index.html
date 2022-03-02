@@ -30,11 +30,13 @@
                 </form>
             </div>
 
+            <div id="choixSelectionne"></div>
+            
             <section class="sectionTris">
 
                 <div class="encarTri">
                   <div class="selectTri" id="selectIngredient">
-                    <input id="inputIngredient" type="text" name="ingredients" placeholder="Ingrédients">
+                    <input id="inputIngredient" onkeypress="getValueIng()" type="text" name="ingredients" placeholder="Ingrédients">
                     <img class="chevron" alt="chevron" src="images/chevron_down.svg"/> 
                     <ul class="choixTri" id="choixIngredients"></ul>
                   </div>
@@ -42,7 +44,7 @@
 
                 <div class="encarTri">
                   <div class="selectTri" id="selectAppareil">
-                    <input id="inputAppareil" type="text" name="appareils" placeholder="Appareils">
+                    <input id="inputAppareil" onkeypress="getValueApp()" type="text" name="appareils" placeholder="Appareils">
                     <img class="chevron" alt="chevron" src="images/chevron_down.svg"/>
                     <ul class="choixTri" id="choixAppareils"></ul>
                   </div>
@@ -50,7 +52,7 @@
                 
                 <div class="encarTri">
                   <div class="selectTri" id="selectUstensile">
-                    <input id="inputUstensile" type="text" name="ustensiles" placeholder="Ustensiles">
+                    <input id="inputUstensile" onkeypress="getValueUst()" type="text" name="ustensiles" placeholder="Ustensiles">
                     <img class="chevron" alt="chevron" src="images/chevron_down.svg"/>
                     <ul class="choixTri" id="choixUstensiles"></ul>
                   </div>
@@ -66,6 +68,7 @@
         <footer></footer>
     
         <script src="recipes.js"></script>
+        <script src="variables.js"></script>
         <script src="index.js"></script>
         <script src="searchBar.js"></script>
         <script src="tris.js"></script>

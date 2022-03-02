@@ -1,6 +1,5 @@
-// Appel tri ingredients, appareils, ustensiles 
 
-
+// TABLEAUX CHOIX TRI
 
 /* tableau appareils */
 
@@ -36,42 +35,40 @@ let tabIngredients = [...new Set(ingredients)]
 /* */
 
 
-// Chargement affichage choix possibles
+// CHARGEMENT CHOIX POSSIBLES
 
 const choixIng = document.querySelector('#choixIngredients');
 const choixApp = document.querySelector('#choixAppareils');
 const choixUst = document.querySelector('#choixUstensiles');
 
 tabAppareils.forEach(elt =>{
-  choixApp.innerHTML += ` <li>${elt.toLowerCase()}</li> `;
+  choixApp.innerHTML += ` <li class="choixA">${elt.toLowerCase()}</li> `;
 })
 
 tabUstensils.forEach(elt =>{
-  choixUst.innerHTML += ` <li>${elt.toLowerCase()}</li> `;
+  choixUst.innerHTML += ` <li class="choixU">${elt.toLowerCase()}</li> `;
 })
 
 tabIngredients.forEach(elt =>{
-  choixIng.innerHTML += ` <li>${elt.toLowerCase()}</li> `;
+  choixIng.innerHTML += ` <li class="choixI">${elt.toLowerCase()}</li> `;
 })
 
 
+/* */
 
-// Changement placeholder
+
+// CHANGEMENT PLACEHOLDER & OUVERTURE/FERMETURE
 
 /* input ingrédients */
 
 const inputIng = document.querySelector('#inputIngredient');
 const selectIng = document.querySelector('#selectIngredient');
 
-inputIng.addEventListener("focus", function(){
+selectIng.addEventListener("click", function(e){
+  e.stopPropagation();
   inputIng.placeholder = "Rechercher un ingrédient";
   selectIng.classList.add("focus");
   choixIng.style.display="block";
-});
-inputIng.addEventListener("blur", function(){
-  inputIng.placeholder = "Ingrédients";
-  selectIng.classList.remove("focus");
-  choixIng.style.display="none";
 });
 
 /* input appareils */
@@ -79,15 +76,11 @@ inputIng.addEventListener("blur", function(){
 const inputApp = document.querySelector('#inputAppareil');
 const selectApp = document.querySelector('#selectAppareil');
 
-inputApp.addEventListener("focus", function(){
+selectApp.addEventListener("click", function(e){
+  e.stopPropagation();
   inputApp.placeholder = "Rechercher un appareil";
   selectApp.classList.add("focus");
   choixApp.style.display="block";
-});
-inputApp.addEventListener("blur", function(){
-  inputApp.placeholder = "Appareils";
-  selectApp.classList.remove("focus");
-  choixApp.style.display="none";
 });
 
 /* input ustensiles */
@@ -95,18 +88,155 @@ inputApp.addEventListener("blur", function(){
 const inputUst = document.querySelector('#inputUstensile');
 const selectUst = document.querySelector('#selectUstensile');
 
-inputUst.addEventListener("focus", function(){
+selectUst.addEventListener("click", function(e){
+  e.stopPropagation();
   inputUst.placeholder = "Rechercher un ustensile";
   selectUst.classList.add("focus");
   choixUst.style.display="block";
 });
-inputUst.addEventListener("blur", function(){
+
+/* fermeture choix */
+
+document.addEventListener("click", function(){
+
+  inputIng.placeholder = "Ingrédients";
+  selectIng.classList.remove("focus");
+  choixIng.style.display="none";
+
+  inputApp.placeholder = "Appareils";
+  selectApp.classList.remove("focus");
+  choixApp.style.display="none";
+
   inputUst.placeholder = "Ustensiles";
   selectUst.classList.remove("focus");
   choixUst.style.display="none";
+
 });
 
 
-
 /* */
+
+
+//* AFFICHAGE CHOIX *//
+
+
+let allChoixAppareils = [...document.querySelectorAll('.choixA')];
+let allChoixUstensiles = [...document.querySelectorAll('.choixU')];
+let allChoixIngredients = [...document.querySelectorAll('.choixI')];
+
+let inputAppValue;
+let inputIngValue;
+let inputUstValue;
+
+
+/* function tri appareils */
+
+function getValueApp(e) {
+  
+  inputAppValue = inputApp.value;
+
+  allChoixAppareils.map(choix =>{
+
+    let valueApp = choix.innerHTML;
+
+    if(inputAppValue.length >= 3){
+      if(valueApp.includes(inputAppValue)){
+        choix.style.display="block";
+      }
+      else{
+        choix.style.display="none";
+      }
+    } 
+    else{
+      choix.style.display="block";
+    }
+  })  
+}
+
+
+/* function tri ustensiles */
+
+function getValueUst(e) {
+  
+  inputUstValue = inputUst.value;
+
+  allChoixUstensiles.map(choix =>{
+
+    let valueUst = choix.innerHTML;
+
+    if(inputUstValue.length >= 3){
+      if(valueUst.includes(inputUstValue)){
+        choix.style.display="block";
+      }
+      else{
+        choix.style.display="none";
+      }
+    } 
+    else{
+      choix.style.display="block";
+    }
+  })  
+}
+
+/* function tri ingredients */
+
+function getValueIng(e) {
+  
+  inputIngValue = inputIng.value;
+
+  allChoixIngredients.map(choix =>{
+
+    let valueIng = choix.innerHTML;
+
+    if(inputIngValue.length >= 3){
+      if(valueIng.includes(inputIngValue)){
+        choix.style.display="block";
+      }
+      else{
+        choix.style.display="none";
+      }
+    } 
+    else{
+      choix.style.display="block";
+    }
+  })  
+}
+
+
+// AFFICHAGE CHOIX TRI
+
+let allChoix = [...document.querySelectorAll('.choixI, .choixA, .choixU')];
+
+let choixSelect = document.querySelector('#choixSelectionne');
+
+let choixSeul = allChoix.map(choix =>{
+  choix.addEventListener('click', function(){
+    choixSelect.innerHTML += ` 
+      <div class="${choix.className == 'choixI' ? 'ingredient' : ""}${choix.className == 'choixA' ? 'appareil' : ""}${choix.className == 'choixU' ? 'ustensile' : ""}">${choix.innerHTML}<img onclick="closeChoice(this)" class="cross" alt="cross" src="images/cross.svg"/></div> 
+    `;   
+
+    allRecettes.map(recipe =>{
+
+      let dataAppareil = recipe.dataset.appareil.toLowerCase();
+      let dataIngredient = recipe.dataset.ingredients.toLowerCase();
+      let dataUstensile = recipe.dataset.ustensiles.toLowerCase();
+
+      if(dataAppareil.includes(choix.innerHTML) || dataIngredient.includes(choix.innerHTML) || dataUstensile.includes(choix.innerHTML)){
+        recipe.style.display="block";
+      }
+      else{
+        recipe.style.display="none";
+      }
+    });
+
+  })
+});
+
+/* fonction effacer choix */
+
+function closeChoice(e){
+  e.parentNode.style.display="none";
+}
+
+
 

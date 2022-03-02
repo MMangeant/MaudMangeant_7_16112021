@@ -20,11 +20,14 @@
     .choixTri{
       list-style: none;
       padding: 0;
-      max-height: 200px;
+      // max-height: 200px;
       column-count: 3;
       color: $blanc;
       padding: 10px;
       display: none;
+      li{
+        cursor: pointer;
+      }
     }
     .selectTri{
       position: relative;
@@ -32,12 +35,11 @@
       width:180px;
       border-radius: 5px;
       .chevron{
+        padding-right: 10px;
         position: absolute;
         right: 0;
         width: 18px;
         top: 15px;
-        padding-right: 10px;
-        // transform: translateY(-50%);
       }
       span{
         position: absolute;
@@ -51,7 +53,7 @@
       input{
           padding-right: 20px;
           border: none;
-          padding: 15px;
+          padding: 20px;
           color: $blanc;
           -webkit-appearance: none;
           outline: none !important;
@@ -70,7 +72,34 @@
         width: 40vw;
         .chevron{
           transform: rotate(180deg);
+          padding-left: 10px;
         }
       }
     }
+}
+
+#choixSelectionne{
+  display: flex;
+  flex-wrap: wrap;
+  div{
+    margin-bottom: 20px;
+    color: $blanc;
+    margin-right: 20px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    img{
+      padding-left: 7px;
+    }
+    &.ingredient{
+      background-color: $bleu;
+    }
+    &.appareil{
+      background-color: $vert;
+    }
+    &.ustensile{
+      background-color: $orange;
+    }
+  }
 }

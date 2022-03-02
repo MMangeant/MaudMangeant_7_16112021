@@ -27,11 +27,13 @@ body {
 .sectionTris .choixTri {
   list-style: none;
   padding: 0;
-  max-height: 200px;
   column-count: 3;
   color: #ffffff;
   padding: 10px;
   display: none;
+}
+.sectionTris .choixTri li {
+  cursor: pointer;
 }
 .sectionTris .selectTri {
   position: relative;
@@ -40,11 +42,11 @@ body {
   border-radius: 5px;
 }
 .sectionTris .selectTri .chevron {
+  padding-right: 10px;
   position: absolute;
   right: 0;
   width: 18px;
   top: 15px;
-  padding-right: 10px;
 }
 .sectionTris .selectTri span {
   position: absolute;
@@ -57,7 +59,7 @@ body {
 .sectionTris .selectTri input {
   padding-right: 20px;
   border: none;
-  padding: 15px;
+  padding: 20px;
   color: #ffffff;
   -webkit-appearance: none;
   outline: none !important;
@@ -76,6 +78,33 @@ body {
 }
 .sectionTris .selectTri.focus .chevron {
   transform: rotate(180deg);
+  padding-left: 10px;
+}
+
+#choixSelectionne {
+  display: flex;
+  flex-wrap: wrap;
+}
+#choixSelectionne div {
+  margin-bottom: 20px;
+  color: #ffffff;
+  margin-right: 20px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+#choixSelectionne div img {
+  padding-left: 7px;
+}
+#choixSelectionne div.ingredient {
+  background-color: #3282F7;
+}
+#choixSelectionne div.appareil {
+  background-color: #68D9A4;
+}
+#choixSelectionne div.ustensile {
+  background-color: #ED6454;
 }
 
 .form-search {
