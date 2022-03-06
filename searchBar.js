@@ -6,6 +6,7 @@ let inputValue;
 
 function getValue(e) {
   inputValue = document.getElementById('searchBar').value;
+  console.log("valeur bar " + inputValue);
 
   allRecettes.map(recipe =>{
 

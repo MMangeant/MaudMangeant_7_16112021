@@ -207,6 +207,7 @@ function getValueIng(e) {
 
 let allChoix = [...document.querySelectorAll('.choixI, .choixA, .choixU')];
 
+
 let choixSelect = document.querySelector('#choixSelectionne');
 
 let choixSeul = allChoix.map(choix =>{

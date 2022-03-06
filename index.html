@@ -24,7 +24,7 @@
             <div role="search-bar" class="sectionSearch">
                 <form method="post" action="">
                     <div class="form-search">
-                        <input type="text" name="" id="searchBar" onkeypress="getValue()" placeholder="Rechercher une recette"/>
+                        <input type="text" name="" id="searchBar" onkeyup="getValue()" placeholder="Rechercher une recette"/>
                         <span class="loupe" onclick="getValue()"><img src="images/loupe.svg" alt=""></button>
                     </div>
                 </form>
@@ -36,7 +36,7 @@
 
                 <div class="encarTri">
                   <div class="selectTri" id="selectIngredient">
-                    <input id="inputIngredient" onkeypress="getValueIng()" type="text" name="ingredients" placeholder="Ingrédients">
+                    <input id="inputIngredient" onkeyup="getValueIng()" type="text" name="ingredients" placeholder="Ingrédients">
                     <img class="chevron" alt="chevron" src="images/chevron_down.svg"/> 
                     <ul class="choixTri" id="choixIngredients"></ul>
                   </div>
@@ -44,7 +44,7 @@
 
                 <div class="encarTri">
                   <div class="selectTri" id="selectAppareil">
-                    <input id="inputAppareil" onkeypress="getValueApp()" type="text" name="appareils" placeholder="Appareils">
+                    <input id="inputAppareil" onkeyup="getValueApp()" type="text" name="appareils" placeholder="Appareils">
                     <img class="chevron" alt="chevron" src="images/chevron_down.svg"/>
                     <ul class="choixTri" id="choixAppareils"></ul>
                   </div>
@@ -52,7 +52,7 @@
                 
                 <div class="encarTri">
                   <div class="selectTri" id="selectUstensile">
-                    <input id="inputUstensile" onkeypress="getValueUst()" type="text" name="ustensiles" placeholder="Ustensiles">
+                    <input id="inputUstensile" onkeyup="getValueUst()" type="text" name="ustensiles" placeholder="Ustensiles">
                     <img class="chevron" alt="chevron" src="images/chevron_down.svg"/>
                     <ul class="choixTri" id="choixUstensiles"></ul>
                   </div>
