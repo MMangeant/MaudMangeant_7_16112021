@@ -203,18 +203,45 @@ function getValueIng(e) {
 }
 
 
+
 // AFFICHAGE CHOIX TRI
+
+
+
 
 let allChoix = [...document.querySelectorAll('.choixI, .choixA, .choixU')];
 
-
 let choixSelect = document.querySelector('#choixSelectionne');
 
-let choixSeul = allChoix.map(choix =>{
+let tabChoixSelect = [];
+
+
+allChoix.map(choix =>{
   choix.addEventListener('click', function(){
     choixSelect.innerHTML += ` 
-      <div class="${choix.className == 'choixI' ? 'ingredient' : ""}${choix.className == 'choixA' ? 'appareil' : ""}${choix.className == 'choixU' ? 'ustensile' : ""}">${choix.innerHTML}<img onclick="closeChoice(this)" class="cross" alt="cross" src="images/cross.svg"/></div> 
+      <div class="${choix.className == 'choixI' ? 'ingredient' : ""}${choix.className == 'choixA' ? 'appareil' : ""}${choix.className == 'choixU' ? 'ustensile' : ""}">${choix.innerHTML}<img data-choix="${choix.innerHTML}" class="cross" alt="cross" src="images/cross.svg"/></div> 
     `;   
+
+    tabChoixSelect.push(choix.innerHTML);
+
+    /* fonction effacer choix */
+    let crossChoix;
+    let indexOfChoix;
+    let cross = document.querySelector('.cross');
+    cross.addEventListener('click', function(){
+      cross.parentNode.style.display="none";
+      crossChoix = cross.dataset.choix;
+      console.log(crossChoix);
+      // tabChoixSelect.filter(elt => elt !== crossChoix);
+      // indexOfChoix = tabChoixSelect.indexOf(crossChoix);
+      // if (indexOfChoix !== -1) {
+      //   tabChoixSelect.splice(indexOfChoix, 1);
+      // }
+    });
+    // tabChoixSelect = tabChoixSelect.filter(elt => elt != crossChoix);
+
+    console.log(crossChoix);
+    console.log(tabChoixSelect);
 
     allRecettes.map(recipe =>{
 
@@ -222,7 +249,7 @@ let choixSeul = allChoix.map(choix =>{
       let dataIngredient = recipe.dataset.ingredients.toLowerCase();
       let dataUstensile = recipe.dataset.ustensiles.toLowerCase();
 
-      if(dataAppareil.includes(choix.innerHTML) || dataIngredient.includes(choix.innerHTML) || dataUstensile.includes(choix.innerHTML)){
+      if(dataAppareil.includes(tabChoixSelect) || dataIngredient.includes(tabChoixSelect) || dataUstensile.includes(tabChoixSelect)){
         recipe.style.display="block";
       }
       else{
@@ -233,11 +260,16 @@ let choixSeul = allChoix.map(choix =>{
   })
 });
 
+
 /* fonction effacer choix */
 
-function closeChoice(e){
-  e.parentNode.style.display="none";
-}
+// sur html : onclick="closeChoice(this)"
+
+// function closeChoice(e){
+//   e.parentNode.style.display="none";
+//   console.log(e);
+// }
+
 
 
 

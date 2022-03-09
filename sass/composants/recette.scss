@@ -3,7 +3,7 @@
     margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 50px 20px;
     .recetteEncart{
         border-radius: 5px;
         width: 380px;
@@ -13,6 +13,7 @@
         &__img{
             background-color: $grisFonce;
             border-radius: 5px 5px 0 0;
+            min-height: 182px;
         }
         &__txt{
             background-color: $grisClair;
