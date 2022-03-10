@@ -219,28 +219,26 @@ let tabChoixSelect = [];
 allChoix.map(choix =>{
   choix.addEventListener('click', function(){
     choixSelect.innerHTML += ` 
-      <div class="${choix.className == 'choixI' ? 'ingredient' : ""}${choix.className == 'choixA' ? 'appareil' : ""}${choix.className == 'choixU' ? 'ustensile' : ""}">${choix.innerHTML}<img data-choix="${choix.innerHTML}" class="cross" alt="cross" src="images/cross.svg"/></div> 
+      <div class="${choix.className == 'choixI' ? 'ingredient' : choix.className == 'choixA' ? 'appareil' : choix.className == 'choixU' ? 'ustensile' : ""}">
+        ${choix.innerHTML}
+        <img data-choix="${choix.innerHTML}" class="cross" alt="cross" src="images/cross.svg"/>
+      </div> 
     `;   
-
+        
     tabChoixSelect.push(choix.innerHTML);
 
     /* fonction effacer choix */
     let crossChoix;
-    let indexOfChoix;
-    let cross = document.querySelector('.cross');
-    cross.addEventListener('click', function(){
-      cross.parentNode.style.display="none";
-      crossChoix = cross.dataset.choix;
-      console.log(crossChoix);
-      // tabChoixSelect.filter(elt => elt !== crossChoix);
-      // indexOfChoix = tabChoixSelect.indexOf(crossChoix);
-      // if (indexOfChoix !== -1) {
-      //   tabChoixSelect.splice(indexOfChoix, 1);
-      // }
+    let crosses = [...document.querySelectorAll('.cross')];
+    crosses.map(cross => {
+      cross.addEventListener('click', function(){
+        cross.parentNode.style.display="none";
+        crossChoix = cross.dataset.choix;
+        console.log(crossChoix);
+      });
     });
-    // tabChoixSelect = tabChoixSelect.filter(elt => elt != crossChoix);
+    
 
-    console.log(crossChoix);
     console.log(tabChoixSelect);
 
     allRecettes.map(recipe =>{
