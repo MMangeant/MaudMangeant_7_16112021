@@ -216,97 +216,57 @@ let choixSelect = document.querySelector('#choixSelectionne');
 let tabChoixSelect = [];
 
 
-
-
 allChoix.map(choix =>{
-  choix.addEventListener('click', createTag)
-    
-   
-    // console.log(tabChoixSelect);
-
-    // allRecettes.map(recipe =>{
-
-    //   let dataAppareil = recipe.dataset.appareil.toLowerCase();
-    //   let dataIngredient = recipe.dataset.ingredients.toLowerCase();
-    //   let dataUstensile = recipe.dataset.ustensiles.toLowerCase();
-
-    //   if(dataAppareil.includes(tabChoixSelect) || dataIngredient.includes(tabChoixSelect) || dataUstensile.includes(tabChoixSelect)){
-    //     recipe.style.display="block";
-    //   }
-    //   else{
-    //     recipe.style.display="none";
-    //   }
-    // });
-
-  });
-
-
-
-function createTag(){
-  choixSelect.innerHTML += ` 
-      <div class="${this.className == 'choixI' ? 'ingredient' : this.className == 'choixA' ? 'appareil' : this.className == 'choixU' ? 'ustensile' : ""}">
-        ${this.innerHTML}
-        <img data-choix="${this.innerHTML}" onclick="closeChoice(this)" class="cross" alt="cross" src="images/cross.svg"/>
+  choix.addEventListener('click', function(){
+    choixSelect.innerHTML += ` 
+      <div class="${choix.className == 'choixI' ? 'ingredient' : choix.className == 'choixA' ? 'appareil' : choix.className == 'choixU' ? 'ustensile' : ""}">
+        ${choix.innerHTML}
+        <img data-choix="${choix.innerHTML}" class="cross" alt="cross" src="images/cross.svg"/>
       </div> 
     `;   
-  tabChoixSelect.push(this.innerHTML);
-  // console.log(tabChoixSelect);
-  trierRecettes();
-}
+        
+    tabChoixSelect.push(choix.innerHTML);
 
+    /* fonction effacer choix */
+    let crossChoix;
+    let crosses = [...document.querySelectorAll('.cross')];
+    crosses.map(cross => {
+      cross.addEventListener('click', function(){
+        cross.parentNode.style.display="none";
+        crossChoix = cross.dataset.choix;
+        console.log(crossChoix);
+      });
+    });
+    
 
-function closeChoice(croix){
-  croix.parentNode.style.display="none";
-  crossChoix = croix.dataset.choix;
-  tabChoixSelect = tabChoixSelect.filter(elt => elt !== crossChoix);
-  // console.log(tabChoixSelect);
-  trierRecettes();
-}
+    console.log(tabChoixSelect);
 
+    allRecettes.map(recipe =>{
 
-function trierRecettes(){
-  allRecettes.map(recipe =>{
-    let dataIngredient = recipe.dataset.ingredients.toLowerCase();
-    let dataAppareil = recipe.dataset.appareil.toLowerCase();
-    let dataUstensile = recipe.dataset.ustensiles.toLowerCase();
-    console.log(dataIngredient);
+      let dataAppareil = recipe.dataset.appareil.toLowerCase();
+      let dataIngredient = recipe.dataset.ingredients.toLowerCase();
+      let dataUstensile = recipe.dataset.ustensiles.toLowerCase();
 
-      tabChoixSelect.map(motCler => {
-        if(dataIngredient.includes(motCler)){
-          console.log("j'ai faim");
-          recipe.style.display="block";
-        }
-        else{
-            recipe.style.display="none";
-          }
-      })
-
-
-
-
-      if(dataAppareil.includes(tabChoixSelect)){
-        console.log('app');
-        console.log(tabChoixSelect);
+      if(dataAppareil.includes(tabChoixSelect) || dataIngredient.includes(tabChoixSelect) || dataUstensile.includes(tabChoixSelect)){
+        recipe.style.display="block";
       }
-
-      if(dataIngredient.includes(tabChoixSelect)){
-        console.log('ing');
-        console.log(tabChoixSelect);
+      else{
+        recipe.style.display="none";
       }
-      if(dataUstensile.includes(tabChoixSelect)){
-        console.log('ust');
-        console.log(tabChoixSelect);
-      }
+    });
 
-      // if(dataAppareil.includes(tabChoixSelect) || dataIngredient.includes(tabChoixSelect) || dataUstensile.includes(tabChoixSelect)){
-      //   recipe.style.display="block";
-      // }
-      // else{
-      //   recipe.style.display="none";
-      // }
-
-  });
-};
+  })
+});
 
 
-const sentence = 'fraise pommes kiwi';
+/* fonction effacer choix */
+
+// sur html : onclick="closeChoice(this)"
+
+// function closeChoice(e){
+//   e.parentNode.style.display="none";
+//   console.log(e);
+// }
+
+
+

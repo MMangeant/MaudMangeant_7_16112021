@@ -134,6 +134,10 @@ body {
   width: 25px;
 }
 
+#erreurMessage {
+  display: none;
+}
+
 .recettes {
   margin-top: 20px;
   display: grid;
