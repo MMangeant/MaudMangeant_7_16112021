@@ -216,30 +216,7 @@ let choixSelect = document.querySelector('#choixSelectionne');
 let tabChoixSelect = [];
 
 
-
-
-allChoix.map(choix =>{
-  choix.addEventListener('click', createTag)
-    
-   
-    // console.log(tabChoixSelect);
-
-    // allRecettes.map(recipe =>{
-
-    //   let dataAppareil = recipe.dataset.appareil.toLowerCase();
-    //   let dataIngredient = recipe.dataset.ingredients.toLowerCase();
-    //   let dataUstensile = recipe.dataset.ustensiles.toLowerCase();
-
-    //   if(dataAppareil.includes(tabChoixSelect) || dataIngredient.includes(tabChoixSelect) || dataUstensile.includes(tabChoixSelect)){
-    //     recipe.style.display="block";
-    //   }
-    //   else{
-    //     recipe.style.display="none";
-    //   }
-    // });
-
-  });
-
+allChoix.map(choix => choix.addEventListener('click', createTag));
 
 
 function createTag(){
@@ -250,7 +227,6 @@ function createTag(){
       </div> 
     `;   
   tabChoixSelect.push(this.innerHTML);
-  // console.log(tabChoixSelect);
   trierRecettes();
 }
 
@@ -259,54 +235,22 @@ function closeChoice(croix){
   croix.parentNode.style.display="none";
   crossChoix = croix.dataset.choix;
   tabChoixSelect = tabChoixSelect.filter(elt => elt !== crossChoix);
-  // console.log(tabChoixSelect);
   trierRecettes();
 }
 
 
 function trierRecettes(){
-  allRecettes.map(recipe =>{
-    let dataIngredient = recipe.dataset.ingredients.toLowerCase();
-    let dataAppareil = recipe.dataset.appareil.toLowerCase();
-    let dataUstensile = recipe.dataset.ustensiles.toLowerCase();
-    console.log(dataIngredient);
+  allRecettes.filter(recipe =>{
+    const allString = `${recipe.dataset.ingredients} ${recipe.dataset.appareil} ${recipe.dataset.ustensiles}`.toLowerCase();
+    if(tabChoixSelect.every(motCle => allString.includes(motCle))){
+      console.log('yeaaaah');
+      recipe.style.display = "block" 
 
-      tabChoixSelect.map(motCler => {
-        if(dataIngredient.includes(motCler)){
-          console.log("j'ai faim");
-          recipe.style.display="block";
-        }
-        else{
-            recipe.style.display="none";
-          }
-      })
+    }else{
+      recipe.style.display = "none" 
+    }
 
-
-
-
-      if(dataAppareil.includes(tabChoixSelect)){
-        console.log('app');
-        console.log(tabChoixSelect);
-      }
-
-      if(dataIngredient.includes(tabChoixSelect)){
-        console.log('ing');
-        console.log(tabChoixSelect);
-      }
-      if(dataUstensile.includes(tabChoixSelect)){
-        console.log('ust');
-        console.log(tabChoixSelect);
-      }
-
-      // if(dataAppareil.includes(tabChoixSelect) || dataIngredient.includes(tabChoixSelect) || dataUstensile.includes(tabChoixSelect)){
-      //   recipe.style.display="block";
-      // }
-      // else{
-      //   recipe.style.display="none";
-      // }
 
   });
 };
 
-
-const sentence = 'fraise pommes kiwi';
