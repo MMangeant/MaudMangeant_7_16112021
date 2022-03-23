@@ -119,14 +119,11 @@ body {
 }
 .form-search input {
   width: 100%;
-  padding: 15px 0;
+  padding: 15px 0 15px 15px;
   border-radius: 5px;
   background-color: #E7E7E7;
   border: none;
   outline: none !important;
-}
-.form-search input::placeholder {
-  padding-left: 15px;
 }
 .form-search .loupe {
   padding-right: 15px;
