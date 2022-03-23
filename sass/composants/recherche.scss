@@ -2,18 +2,15 @@
 	margin-bottom: 20px;
 	position: relative;
 	input {
-		width: 100%;
-		padding: 15px 0;
+		width: 98%;
+		padding: 15px;
 		border-radius: 5px;
 		background-color: $grisClair;
 		border: none;
 		outline: none !important;
-		&::placeholder {
-			padding-left: 15px;
-		}
 	}
 	.loupe {
-		padding-right: 15px;
+    padding-right: 10px;
 		position: absolute;
 		right: 0px;
 		background: transparent;
