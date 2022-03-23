@@ -7,7 +7,8 @@ let inputValue;
 let recettesAffichees = [];
 let erreurMessage = document.querySelector('#erreurMessage');
 
-function getValue(e) {
+function research(e) {
+
   inputValue = document.getElementById('searchBar').value;
   console.log("valeur bar " + inputValue);
 
@@ -20,7 +21,6 @@ function getValue(e) {
         if(dataIngredients.includes(inputValue) || dataName.includes(inputValue) || dataDescription.includes(inputValue)){
           recipe.style.display="block";
           recipe.classList.add("displayed");
-          // recettesAffichees = recettesAffichees.push(recipe);
         }
         else{
           recipe.style.display="none";
@@ -28,9 +28,7 @@ function getValue(e) {
         }
     } 
     else{
-      // console.log(inputValue + "is too short");
       recipe.style.display="block";
-      // recipe.classList.add("displayed");
     }
     
     if(recipe.classList.contains('displayed')){

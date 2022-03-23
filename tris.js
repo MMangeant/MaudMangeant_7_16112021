@@ -5,7 +5,6 @@
 
 let tabAppareils = [...new Set(recipes.map(recipe => recipe.appliance))];
 
-
 /* tableau ustensiles */
 
 let ustensils = [];
@@ -18,7 +17,6 @@ recipes.map(recipe => {
 
 let tabUstensils = [...new Set(ustensils)]
 
-
 /* tableau ingrédients */
 
 let ingredients = [];
@@ -30,9 +28,6 @@ recipes.map(recipe => {
 })
 
 let tabIngredients = [...new Set(ingredients)]
-
-
-/* */
 
 
 // CHARGEMENT CHOIX POSSIBLES
@@ -52,9 +47,6 @@ tabUstensils.forEach(elt =>{
 tabIngredients.forEach(elt =>{
   choixIng.innerHTML += ` <li class="choixI">${elt.toLowerCase()}</li> `;
 })
-
-
-/* */
 
 
 // CHANGEMENT PLACEHOLDER & OUVERTURE/FERMETURE
@@ -114,11 +106,7 @@ document.addEventListener("click", function(){
 });
 
 
-/* */
-
-
 //* AFFICHAGE CHOIX *//
-
 
 let allChoixAppareils = [...document.querySelectorAll('.choixA')];
 let allChoixUstensiles = [...document.querySelectorAll('.choixU')];
@@ -128,10 +116,9 @@ let inputAppValue;
 let inputIngValue;
 let inputUstValue;
 
-
 /* function tri appareils */
 
-function getValueApp(e) {
+function triApp(e) {
   
   inputAppValue = inputApp.value;
 
@@ -151,12 +138,12 @@ function getValueApp(e) {
       choix.style.display="block";
     }
   })  
-}
 
+}
 
 /* function tri ustensiles */
 
-function getValueUst(e) {
+function triUst(e) {
   
   inputUstValue = inputUst.value;
 
@@ -175,12 +162,13 @@ function getValueUst(e) {
     else{
       choix.style.display="block";
     }
-  })  
+  }) 
+
 }
 
 /* function tri ingredients */
 
-function getValueIng(e) {
+function triIng(e) {
   
   inputIngValue = inputIng.value;
 
@@ -203,11 +191,7 @@ function getValueIng(e) {
 }
 
 
-
 // AFFICHAGE CHOIX TRI
-
-
-
 
 let allChoix = [...document.querySelectorAll('.choixI, .choixA, .choixU')];
 
@@ -215,11 +199,10 @@ let choixSelect = document.querySelector('#choixSelectionne');
 
 let tabChoixSelect = [];
 
-
 allChoix.map(choix => choix.addEventListener('click', createTag));
 
-
 function createTag(){
+
   choixSelect.innerHTML += ` 
       <div class="${this.className == 'choixI' ? 'ingredient' : this.className == 'choixA' ? 'appareil' : this.className == 'choixU' ? 'ustensile' : ""}">
         ${this.innerHTML}
@@ -228,18 +211,20 @@ function createTag(){
     `;   
   tabChoixSelect.push(this.innerHTML);
   trierRecettes();
+
 }
 
-
 function closeChoice(croix){
+
   croix.parentNode.style.display="none";
   crossChoix = croix.dataset.choix;
   tabChoixSelect = tabChoixSelect.filter(elt => elt !== crossChoix);
   trierRecettes();
+
 }
 
-
 function trierRecettes(){
+
   allRecettes.filter(recipe =>{
     const allString = `${recipe.dataset.ingredients} ${recipe.dataset.appareil} ${recipe.dataset.ustensiles}`.toLowerCase();
     if(tabChoixSelect.every(motCle => allString.includes(motCle))){
@@ -249,8 +234,7 @@ function trierRecettes(){
     }else{
       recipe.style.display = "none" 
     }
-
-
   });
+
 };
 

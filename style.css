@@ -15,13 +15,16 @@ body {
 .sectionTris {
   display: flex;
 }
-.sectionTris .encarTri:nth-child(1) .choixTri, .sectionTris .encarTri:nth-child(1) .selectTri {
+.sectionTris .encarTri:nth-child(1) .choixTri,
+.sectionTris .encarTri:nth-child(1) .selectTri {
   background-color: #3282F7;
 }
-.sectionTris .encarTri:nth-child(2) .choixTri, .sectionTris .encarTri:nth-child(2) .selectTri {
+.sectionTris .encarTri:nth-child(2) .choixTri,
+.sectionTris .encarTri:nth-child(2) .selectTri {
   background-color: #68D9A4;
 }
-.sectionTris .encarTri:nth-child(3) .choixTri, .sectionTris .encarTri:nth-child(3) .selectTri {
+.sectionTris .encarTri:nth-child(3) .choixTri,
+.sectionTris .encarTri:nth-child(3) .selectTri {
   background-color: #ED6454;
 }
 .sectionTris .choixTri {
@@ -116,15 +119,19 @@ body {
 }
 .form-search input {
   width: 100%;
-  padding: 15px;
+  padding: 15px 0;
   border-radius: 5px;
   background-color: #E7E7E7;
   border: none;
   outline: none !important;
 }
+.form-search input::placeholder {
+  padding-left: 15px;
+}
 .form-search .loupe {
+  padding-right: 15px;
   position: absolute;
-  right: -20px;
+  right: 0px;
   background: transparent;
   border: none;
   top: 50%;
@@ -142,11 +149,10 @@ body {
   margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 50px 20px;
+  grid-gap: 50px;
 }
 .recettes .recetteEncart {
   border-radius: 5px;
-  width: 380px;
   height: 364px;
   display: grid;
   grid-template-rows: 1fr 1fr;

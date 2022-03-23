@@ -1,108 +1,109 @@
-.sectionTris{
-  display: flex;
-    .encarTri{
-      &:nth-child(1){
-        .choixTri, .selectTri{
-          background-color: $bleu;
-        }
-      }
-      &:nth-child(2){
-        .choixTri, .selectTri{
-          background-color: $vert;
-        }
-      }
-      &:nth-child(3){
-        .choixTri, .selectTri{
-          background-color: $orange;
-        }
-      }
-    }
-    .choixTri{
-      list-style: none;
-      padding: 0;
-      // max-height: 200px;
-      column-count: 3;
-      color: $blanc;
-      padding: 10px;
-      display: none;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-      z-index: 1;
-      li{
-        cursor: pointer;
-        padding: 2px 0;
-      }
-    }
-    .selectTri{
-      position: relative;
-      margin-right: 10px;
-      width:180px;
-      border-radius: 5px;
-      .chevron{
-        padding-right: 10px;
-        position: absolute;
-        right: 0;
-        width: 18px;
-        top: 15px;
-      }
-      span{
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        color: $blanc;
-        margin-left: 10px;
-        pointer-events: none;
-
-      }
-      input{
-          padding-right: 20px;
-          border: none;
-          padding: 20px;
-          color: $blanc;
-          -webkit-appearance: none;
-          outline: none !important;
-          background: transparent;
-          width: 100%;
-          &::placeholder{
-            color: rgba($blanc, 0.8);
-            letter-spacing: 1px;
-          }
-          &:focus{
-            width: 30vw;
-          }
-          
-      }
-      &.focus{
-        width: 40vw;
-        .chevron{
-          transform: rotate(180deg);
-          padding-left: 10px;
-        }
-      }
-    }
+.sectionTris {
+	display: flex;
+	.encarTri {
+		&:nth-child(1) {
+			.choixTri,
+			.selectTri {
+				background-color: $bleu;
+			}
+		}
+		&:nth-child(2) {
+			.choixTri,
+			.selectTri {
+				background-color: $vert;
+			}
+		}
+		&:nth-child(3) {
+			.choixTri,
+			.selectTri {
+				background-color: $orange;
+			}
+		}
+	}
+	.choixTri {
+		list-style: none;
+		padding: 0;
+		// max-height: 200px;
+		column-count: 3;
+		color: $blanc;
+		padding: 10px;
+		display: none;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+		z-index: 1;
+		li {
+			cursor: pointer;
+			padding: 2px 0;
+		}
+	}
+	.selectTri {
+		position: relative;
+		margin-right: 10px;
+		width: 180px;
+		border-radius: 5px;
+		.chevron {
+			padding-right: 10px;
+			position: absolute;
+			right: 0;
+			width: 18px;
+			top: 15px;
+		}
+		span {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			color: $blanc;
+			margin-left: 10px;
+			pointer-events: none;
+		}
+		input {
+			padding-right: 20px;
+			border: none;
+			padding: 20px;
+			color: $blanc;
+			-webkit-appearance: none;
+			outline: none !important;
+			background: transparent;
+			width: 100%;
+			&::placeholder {
+				color: rgba($blanc, 0.8);
+				letter-spacing: 1px;
+			}
+			&:focus {
+				width: 30vw;
+			}
+		}
+		&.focus {
+			width: 40vw;
+			.chevron {
+				transform: rotate(180deg);
+				padding-left: 10px;
+			}
+		}
+	}
 }
 
-#choixSelectionne{
-  display: flex;
-  flex-wrap: wrap;
-  div{
-    margin-bottom: 20px;
-    color: $blanc;
-    margin-right: 20px;
-    padding: 10px 15px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    img{
-      padding-left: 7px;
-    }
-    &.ingredient{
-      background-color: $bleu;
-    }
-    &.appareil{
-      background-color: $vert;
-    }
-    &.ustensile{
-      background-color: $orange;
-    }
-  }
+#choixSelectionne {
+	display: flex;
+	flex-wrap: wrap;
+	div {
+		margin-bottom: 20px;
+		color: $blanc;
+		margin-right: 20px;
+		padding: 10px 15px;
+		border-radius: 5px;
+		display: flex;
+		align-items: center;
+		img {
+			padding-left: 7px;
+		}
+		&.ingredient {
+			background-color: $bleu;
+		}
+		&.appareil {
+			background-color: $vert;
+		}
+		&.ustensile {
+			background-color: $orange;
+		}
+	}
 }

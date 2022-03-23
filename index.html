@@ -1,83 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        <title>Les Petits Plats</title>
-    </head>
 
-    <body>
-        <header role="banner">
-            <div class="header-logo" aria-label="logo"> 
-                <img alt="logo" src="images/logo.png" width="auto" height="auto" />
-            </div>
-            <nav id="menu" role=”navigation” aria-label="photographer categories">
-                <ul></ul>
-            </nav>
-        </header>
-    
-        <main>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <title>Les Petits Plats</title>
+</head>
 
-            <div role="search-bar" class="sectionSearch">
-                <form method="post" action="">
-                    <div class="form-search">
-                        <input type="text" name="" id="searchBar" onkeyup="getValue()" placeholder="Rechercher une recette"/>
-                        <span class="loupe" onclick="getValue()"><img src="images/loupe.svg" alt=""></button>
-                    </div>
-                </form>
-            </div>
+<body>
+  <header role="banner">
+    <div class="header-logo" aria-label="logo">
+      <img alt="logo" src="images/logo.png" width="auto" height="auto" />
+    </div>
+    <nav id="menu" role=”navigation” aria-label="photographer categories">
+      <ul></ul>
+    </nav>
+  </header>
 
-            <div id="choixSelectionne"></div>
-            
-            <section class="sectionTris">
+  <main>
 
-                <div class="encarTri">
-                  <div class="selectTri" id="selectIngredient">
-                    <input id="inputIngredient" onkeyup="getValueIng()" type="text" name="ingredients" placeholder="Ingrédients">
-                    <img class="chevron" alt="chevron" src="images/chevron_down.svg"/> 
-                    <ul class="choixTri" id="choixIngredients"></ul>
-                  </div>
-                </div>
+    <div role="search-bar" class="sectionSearch">
+      <form method="post" action="">
+        <div class="form-search">
+          <input type="text" name="" id="searchBar" onkeyup="research()" placeholder="Rechercher une recette" />
+          <span class="loupe" onclick="research()"><img src="images/loupe.svg" alt=""></button>
+        </div>
+      </form>
+    </div>
 
-                <div class="encarTri">
-                  <div class="selectTri" id="selectAppareil">
-                    <input id="inputAppareil" onkeyup="getValueApp()" type="text" name="appareils" placeholder="Appareils">
-                    <img class="chevron" alt="chevron" src="images/chevron_down.svg"/>
-                    <ul class="choixTri" id="choixAppareils"></ul>
-                  </div>
-                </div>
-                
-                <div class="encarTri">
-                  <div class="selectTri" id="selectUstensile">
-                    <input id="inputUstensile" onkeyup="getValueUst()" type="text" name="ustensiles" placeholder="Ustensiles">
-                    <img class="chevron" alt="chevron" src="images/chevron_down.svg"/>
-                    <ul class="choixTri" id="choixUstensiles"></ul>
-                  </div>
-                </div>
+    <div id="choixSelectionne"></div>
 
-            </section>
+    <section class="sectionTris">
 
-              <section class="recettes">
-              </section>
+      <div class="encarTri">
+        <div class="selectTri" id="selectIngredient">
+          <input id="inputIngredient" onkeyup="triIng()" type="text" name="ingredients" placeholder="Ingrédients">
+          <img class="chevron" alt="chevron" src="images/chevron_down.svg" />
+          <ul class="choixTri" id="choixIngredients"></ul>
+        </div>
+      </div>
 
-              <div id="erreurMessage">
-                <p>Aucune recette ne correspond à votre critère… vous pouvez
-                  chercher « tarte aux pommes », « poisson », etc.</p>
-              </div>
+      <div class="encarTri">
+        <div class="selectTri" id="selectAppareil">
+          <input id="inputAppareil" onkeyup="triApp()" type="text" name="appareils" placeholder="Appareils">
+          <img class="chevron" alt="chevron" src="images/chevron_down.svg" />
+          <ul class="choixTri" id="choixAppareils"></ul>
+        </div>
+      </div>
 
-        </main>
-      
-        <footer></footer>
-    
-        <script src="recipes.js"></script>
-        <script src="variables.js"></script>
-        <script src="utils.js"></script>
-        <script src="index.js"></script>
-        <script src="searchBar2.js"></script>
-        <script src="tris.js"></script>
-        
-    </body>
+      <div class="encarTri">
+        <div class="selectTri" id="selectUstensile">
+          <input id="inputUstensile" onkeyup="triUst()" type="text" name="ustensiles" placeholder="Ustensiles">
+          <img class="chevron" alt="chevron" src="images/chevron_down.svg" />
+          <ul class="choixTri" id="choixUstensiles"></ul>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="recettes">
+    </section>
+
+    <div id="erreurMessage">
+      <p>Aucune recette ne correspond à votre critère… vous pouvez
+        chercher « tarte aux pommes », « poisson », etc.</p>
+    </div>
+
+  </main>
+
+  <footer></footer>
+
+  <script src="recipes.js"></script>
+  <script src="variables.js"></script>
+  <script src="utils.js"></script>
+  <script src="index.js"></script>
+  <script src="searchBar2.js"></script>
+  <script src="tris.js"></script>
+
+</body>
+
 </html>

@@ -7,7 +7,8 @@ let inputValue;
 let recettesAffichees = [];
 let erreurMessage = document.querySelector('#erreurMessage');
 
-function getValue(e) {
+function research(e) {
+
   inputValue = document.getElementById('searchBar').value;
   console.log("valeur bar " + inputValue); 
 
