@@ -15,7 +15,7 @@ recipes.forEach(recette =>{
   sectionRecettes.innerHTML += `
   <div class="recetteEncart" data-name="${nameRecette}" data-ingredients="${ingredientsRecette.map(elt => elt.ingredient).join(' ')}" data-description="${descriptionRecette}" data-appareil="${appareilRecette}" data-ustensiles="${ustensilRecette.map(elt => elt).join(' ')}">
     <div class="recetteEncart__img">
-      <img src="" alt="">
+      <img src="images/no-img.jpg" alt="">
     </div>
     <div class="recetteEncart__txt">
       <div class="recetteH">
