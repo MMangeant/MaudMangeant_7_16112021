@@ -10,7 +10,6 @@ let erreurMessage = document.querySelector('#erreurMessage');
 function research(e) {
 
   inputValue = document.getElementById('searchBar').value;
-  console.log("valeur bar " + inputValue);
 
   allRecettes.map(recipe =>{
     let dataName = recipe.dataset.name.toLowerCase();
@@ -39,6 +38,8 @@ function research(e) {
     }
 
   });
+
+  // condition pour l'affichage du message d'erreur
 
   if(recettesAffichees.length === 0){
     erreurMessage.style.display = "block";
