@@ -116,7 +116,7 @@ let inputAppValue;
 let inputIngValue;
 let inputUstValue;
 
-/* function tri appareils */
+/* fonction tri appareils */
 
 function triApp(e) {
   
@@ -141,7 +141,7 @@ function triApp(e) {
 
 }
 
-/* function tri ustensiles */
+/* fonction tri ustensiles */
 
 function triUst(e) {
   
@@ -166,7 +166,7 @@ function triUst(e) {
 
 }
 
-/* function tri ingredients */
+/* fonction tri ingredients */
 
 function triIng(e) {
   
