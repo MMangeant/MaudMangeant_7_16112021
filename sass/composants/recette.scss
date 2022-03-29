@@ -5,13 +5,19 @@
 	grid-gap: 50px;
 	.recetteEncart {
 		border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 		height: 364px;
 		display: grid;
-		grid-template-rows: 1fr 1fr;
+		//grid-template-rows: 1fr 1fr;
+    height: 100%;
 		&__img {
-			background-color: $grisFonce;
+			// background-color: $grisFonce;
 			border-radius: 5px 5px 0 0;
-			min-height: 182px;
+			//min-height: 182px;
+      width: 100%;
+      img{
+        width: 100%;
+      }
 		}
 		&__txt {
 			background-color: $grisClair;

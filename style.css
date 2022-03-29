@@ -152,14 +152,17 @@ body {
 }
 .recettes .recetteEncart {
   border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   height: 364px;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  height: 100%;
 }
 .recettes .recetteEncart__img {
-  background-color: #C7BEBE;
   border-radius: 5px 5px 0 0;
-  min-height: 182px;
+  width: 100%;
+}
+.recettes .recetteEncart__img img {
+  width: 100%;
 }
 .recettes .recetteEncart__txt {
   background-color: #E7E7E7;
