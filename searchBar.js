@@ -10,7 +10,6 @@ let erreurMessage = document.querySelector('#erreurMessage');
 function research(e) {
 
   inputValue = document.getElementById('searchBar').value;
-  console.log("valeur bar " + inputValue); 
 
   for(let i = 0 ; i < allRecettes.length ; i++){
     let dataName = allRecettes[i].dataset.name.toLowerCase();
@@ -30,6 +29,7 @@ function research(e) {
     else{
       allRecettes[i].style.display="block";
     }
+
     
     if(allRecettes[i].classList.contains('displayed')){
       recettesAffichees.push(allRecettes[i]);
@@ -40,6 +40,8 @@ function research(e) {
 
   }
 
+  // condition pour l'affichage du message d'erreur
+  
   if(recettesAffichees.length === 0){
     erreurMessage.style.display = "block";
   }
