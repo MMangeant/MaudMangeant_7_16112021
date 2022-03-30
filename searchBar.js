@@ -4,7 +4,7 @@ let allRecettes = [...document.querySelectorAll('.recetteEncart')];
 
 let inputValue;
 
-let recettesAffichees = [];
+let recettesAffichees = [...allRecettes.map(recipe => recipe)];
 let erreurMessage = document.querySelector('#erreurMessage');
 
 function research(e) {
