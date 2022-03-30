@@ -19,22 +19,15 @@ function research(e) {
     if(inputValue.length >= 3){
         if(dataIngredients.includes(inputValue) || dataName.includes(inputValue) || dataDescription.includes(inputValue)){
           recipe.style.display="block";
-          recipe.classList.add("displayed");
+          recettesAffichees.push(recipe);
         }
         else{
           recipe.style.display="none";
-          recipe.classList.remove("displayed");
+          recettesAffichees = recettesAffichees.filter(elt => elt !== recipe);
         }
     } 
     else{
       recipe.style.display="block";
-    }
-    
-    if(recipe.classList.contains('displayed')){
-      recettesAffichees.push(recipe);
-    }
-    else{
-      recettesAffichees = recettesAffichees.filter(elt => elt !== recipe);
     }
 
   });
