@@ -19,23 +19,15 @@ function research(e) {
     if(inputValue.length >= 3){
       if(dataIngredients.includes(inputValue) || dataName.includes(inputValue) || dataDescription.includes(inputValue)){
         allRecettes[i].style.display="block";
-        allRecettes[i].classList.add("displayed");
+        recettesAffichees.push(allRecettes[i]);
       }
       else{
         allRecettes[i].style.display="none";
-        allRecettes[i].classList.remove("displayed");
+        recettesAffichees = recettesAffichees.filter(elt => elt !== allRecettes[i]);
       }
     } 
     else{
       allRecettes[i].style.display="block";
-    }
-
-    
-    if(allRecettes[i].classList.contains('displayed')){
-      recettesAffichees.push(allRecettes[i]);
-    }
-    else{
-      recettesAffichees = recettesAffichees.filter(elt => elt !== allRecettes[i]);
     }
 
   }
