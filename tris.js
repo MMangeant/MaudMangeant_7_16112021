@@ -126,16 +126,11 @@ function triApp(e) {
 
     let valueApp = choix.innerHTML;
 
-    if(inputAppValue.length >= 3){
-      if(valueApp.includes(inputAppValue)){
-        choix.style.display="block";
-      }
-      else{
-        choix.style.display="none";
-      }
-    } 
-    else{
+    if(valueApp.includes(inputAppValue)){
       choix.style.display="block";
+    }
+    else{
+      choix.style.display="none";
     }
   })  
 
@@ -151,16 +146,11 @@ function triUst(e) {
 
     let valueUst = choix.innerHTML;
 
-    if(inputUstValue.length >= 3){
-      if(valueUst.includes(inputUstValue)){
-        choix.style.display="block";
-      }
-      else{
-        choix.style.display="none";
-      }
-    } 
-    else{
+    if(valueUst.includes(inputUstValue)){
       choix.style.display="block";
+    }
+    else{
+      choix.style.display="none";
     }
   }) 
 
@@ -176,16 +166,11 @@ function triIng(e) {
 
     let valueIng = choix.innerHTML;
 
-    if(inputIngValue.length >= 3){
-      if(valueIng.includes(inputIngValue)){
-        choix.style.display="block";
-      }
-      else{
-        choix.style.display="none";
-      }
-    } 
-    else{
+    if(valueIng.includes(inputIngValue)){
       choix.style.display="block";
+    }
+    else{
+      choix.style.display="none";
     }
   })  
 }
