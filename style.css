@@ -153,6 +153,7 @@ body {
 .recettes .recetteEncart {
   border-radius: 5px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: #E7E7E7;
   height: 364px;
   display: grid;
   height: 100%;
