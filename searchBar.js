@@ -4,8 +4,9 @@ let allRecettes = [...document.querySelectorAll('.recetteEncart')];
 
 let inputValue;
 
-let recettesAffichees = [];
+let recettesAffichees = [...allRecettes.map(recipe => recipe)];
 let erreurMessage = document.querySelector('#erreurMessage');
+console.log(recettesAffichees);
 
 function research(e) {
 
@@ -29,7 +30,6 @@ function research(e) {
     else{
       recipe.style.display="block";
     }
-
   });
 
   // condition pour l'affichage du message d'erreur

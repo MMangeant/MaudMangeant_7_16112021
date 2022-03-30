@@ -225,7 +225,7 @@ function closeChoice(croix){
 
 function trierRecettes(){
 
-  allRecettes.filter(recipe =>{
+  recettesAffichees.filter(recipe =>{
     const allString = `${recipe.dataset.ingredients} ${recipe.dataset.appareil} ${recipe.dataset.ustensiles}`.toLowerCase();
     if(tabChoixSelect.every(motCle => allString.includes(motCle))){
       recipe.style.display = "block" 
