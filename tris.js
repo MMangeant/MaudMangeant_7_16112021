@@ -228,9 +228,7 @@ function trierRecettes(){
   allRecettes.filter(recipe =>{
     const allString = `${recipe.dataset.ingredients} ${recipe.dataset.appareil} ${recipe.dataset.ustensiles}`.toLowerCase();
     if(tabChoixSelect.every(motCle => allString.includes(motCle))){
-      console.log('yeaaaah');
       recipe.style.display = "block" 
-
     }else{
       recipe.style.display = "none" 
     }
